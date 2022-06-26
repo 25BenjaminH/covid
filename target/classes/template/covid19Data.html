@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<table class="operationTable" border="1">
+    <thead>
+    <tr class="operationTableHeader">
+        <th colspan="4">Operator</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="subOperationTableHeader">
+        <td>Search Data</td>
+        <td>Insert Data</td>
+        <td>ddd</td>
+        <td>Calculation Table</td>
+    </tr>
+    <tr>
+        <!--        select operation block-->
+        <td>
+            <form class = "selectBlock" action="/" method="post">
+                <input type="text" name="country" placeholder="Enter country"><br>
+                <input type="text" name="startTime" placeholder="Enter start time"><br>
+                <input type="text" name="endTime" placeholder="Enter end time"><br>
+                <input type="submit" name="button" value="search"/>
+            </form>
+        </td>
+        <!--        insert operation block-->
+        <td>
+            <form class = "insertBlock" action="/insert" method="post">
+                <input type="text" name="dataRep" placeholder="Enter DataRep"><br>
+                <input type="text" name="caseWeekly" placeholder="Enter CaseWeekly"><br>
+                <input type="text" name="deathsWeekly" placeholder="Enter DeathsWeekly"><br>
+                <input type="text" name="countryAndTerritory" placeholder="Enter CountryAndTerritory"><br>
+                <input type="text" name="geoId" placeholder="Enter GeoId"><br>
+                <input type="text" name="countryAndTerritoryCode" placeholder="Enter CountryAndTerritoryCode"><br>
+                <input type="text" name="continentEXP" placeholder="Enter ContinentEXP"><br>
+                <input type="submit" name="button" value="INSERT"/>
+            </form>
+        </td>
+        <td></td>
+        <!--        calculation block-->
+        <td>
+            <div>
+                <table  border='1'>
+                    <thead>
+                    <tr>
+                        <td>totalCases</td>
+                        <td>avgCases</td>
+                        <td>totalDeaths</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td th:text="${totalCases}">totalCases</td>
+                        <td th:text="${avgCases}">avgCases</td>
+                        <td th:text="${totalDeaths}">totalDeaths</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+<div>
+    <table  class="operationTable" border='1'>
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>DATAREP</td>
+            <td>CASEWEEKLY</td>
+            <td>DEATHSWEEKLY</td>
+            <td>COUNTRYANDTERRITORY</td>
+            <td>GEOID</td>
+            <td>COUNTRYTERRITORYCODE</td>
+            <td>CONTINENTEXP</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="weeklyRep : ${weeklyRepList}">
+            <td th:text="${weeklyRep.Id}">ID</td>
+            <td th:text="${weeklyRep.dataRep}">DATAREP</td>
+            <td th:text="${weeklyRep.caseWeekly}">CASEWEEKLY</td>
+            <td th:text="${weeklyRep.deathsWeekly}">DEATHSWEEKLY</td>
+            <td th:text="${weeklyRep.countryAndTerritory}">COUNTRYANDTERRITORY</td>
+            <td th:text="${weeklyRep.geoId}">GEOID</td>
+            <td th:text="${weeklyRep.countryTerritoryCode}">COUNTRYTERRITORYCODE</td>
+            <td th:text="${weeklyRep.continentExp}">CONTINENTEXP</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

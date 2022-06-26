@@ -1,0 +1,1 @@
+select SUM(casesWeekly) as sumCasesWeekly from covid.weeklyRep where countryAndTerritory = %s

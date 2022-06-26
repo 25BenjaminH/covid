@@ -1,0 +1,1 @@
+select * from covid.weeklyRep where casesWeekly >= 1 order by casesWeekly limit 20;

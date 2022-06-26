@@ -1,0 +1,36 @@
+.operationTable{
+    width:100%;
+    table-layout: fixed;
+}
+
+.operationTableHeader{
+    text-align:center;
+    font-weight: bolder;
+    font-size: 24px;
+    background-color: #E6FBFF
+}
+
+.subOperationTableHeader{
+    text-align:center;
+    background-color: #E6FBFF
+}
+
+/*.calculationBlock{*/
+/*    width:100%;*/
+/*    table-layout: fixed;*/
+
+/*}*/
+
+.dataTable{
+    width:100%;
+    table-layout: fixed;
+}
+
+.selectBlock{
+    margin:auto;
+}
+
+.insertBlock{
+    margin:auto;
+}
+

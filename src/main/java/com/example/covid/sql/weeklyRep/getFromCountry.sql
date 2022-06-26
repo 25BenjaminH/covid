@@ -1,0 +1,1 @@
+select %s from covid.weeklyRep where %s and %s and %s
